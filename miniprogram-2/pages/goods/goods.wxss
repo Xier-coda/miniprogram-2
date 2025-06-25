@@ -1,0 +1,46 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+.goods-list {
+  padding: 20rpx;
+}
+
+.goods-item {
+  display: flex;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.goods-img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.goods-info {
+  flex: 1;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.price {
+  color: #e64340;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
