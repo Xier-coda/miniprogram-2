@@ -1,0 +1,35 @@
+<!--pages/cart/cart.wxml-->
+<text>pages/cart/cart.wxml</text>
+<!-- ✅ 放在 pages/cart/cart.wxml 中，替换旧的 cartList 渲染区 -->
+
+<view class="cart-container">
+  <block wx:if="{{cartList.length > 0}}">
+    <block wx:for="{{cartList}}" wx:key="id">
+      <view class="cart-item">
+        <image class="cart-img" src="{{item.image}}" mode="aspectFill" />
+        <view class="cart-info">
+          <text class="name">{{item.name}}</text>
+          <text class="price">￥{{item.price}}</text>
+
+          <view class="actions">
+            <button size="mini" bindtap="decrease" data-id="{{item.id}}">-</button>
+            <text class="count">{{item.count}}</text>
+            <button size="mini" bindtap="increase" data-id="{{item.id}}">+</button>
+            <button size="mini" type="warn" bindtap="remove" data-id="{{item.id}}">删除</button>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+
+
+  <block wx:else>
+    <view class="empty">购物车为空</view>
+  </block>
+<!-- ✅ 文件：pages/cart/cart.wxml -->
+<view class="cart-footer">
+  <view class="total-price">总价：￥{{totalPrice}}</view>
+  <button class="checkout-btn" bindtap="submitOrder">提交订单</button>
+</view>
+  <button bindtap="goToIndex">返回主页</button>
+</view>
