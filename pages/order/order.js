@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    orders: []
   },
 
   /**
@@ -26,7 +26,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    const orders = wx.getStorageSync('orders') || [];
+    this.setData({ orders });
   },
 
   /**
@@ -62,5 +63,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  //返回主页
+  goToIndex() {
+    wx.navigateTo({
+      url: '/pages/index/index'
+    });
   }
 })

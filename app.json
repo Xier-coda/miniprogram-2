@@ -3,9 +3,7 @@
     "pages/index/index",
     "pages/goods/goods",
     "pages/cart/cart",
-    "pages/order/order",
-    "pages/orders",
-    "pages/order"
+    "pages/order/order"
   ],
   "window": {
     "navigationBarTitleText": "批发商城",

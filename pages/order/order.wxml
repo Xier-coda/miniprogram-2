@@ -1,2 +1,28 @@
 <!--pages/order/order.wxml-->
 <text>pages/order/order.wxml</text>
+<view class="orders-page">
+  <block wx:if="{{orders.length > 0}}">
+    <block wx:for="{{orders}}" wx:key="id">
+      <view class="order-card">
+        <view class="order-header">
+          <text>订单时间：{{item.time}}</text>
+          <text>总价：￥{{item.total}}</text>
+        </view>
+        <view class="order-items">
+          <block wx:for="{{item.items}}" wx:key="id">
+            <view class="order-item">
+              <text>{{item.name}} x {{item.count}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </block>
+
+  <block wx:else>
+    <view class="empty">暂无订单</view>
+  </block>
+  <view class="back-button">
+  <button type="primary" bindtap="goToIndex">返回首页</button>
+</view>
+</view>

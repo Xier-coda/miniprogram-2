@@ -52,6 +52,7 @@ Page({
   
     console.log('当前购物车：', cart);
   },
+  
   //返回主页
   goToIndex() {
     wx.navigateTo({
